@@ -39,7 +39,7 @@ jobs:
             git add .
             git commit -m "new build with imgTag build-$TAG"
             git config credential.helper 'cache --timeout=120'
-            git push -q https://$GITHUB_PERSONAL_TOKEN@github.com/girikgarg8/EKS-Gitops-Automation-Kubernetes.git main 
+            git push -q https://$GITHUB_PERSONAL_TOKEN@github.com/girikgarg8/EKS-Gitops-Automation-Kubernetes.git master 
 workflows:
   GitOpsflow:
     jobs:
