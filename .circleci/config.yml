@@ -27,7 +27,7 @@ jobs:
           command: |
             TAG=$CIRCLE_BUILD_NUM
             ((TAG--))
-            git clone https://github.com/girikgarg8/kube_manifest.git
+            git clone https://github.com/girikgarg8/EKS-Gitops-Automation-Kubernetes.git
             git config --global user.email "girikgarg8@gmail.com"
             git config --global user.name "girikgarg8"
             pwd
