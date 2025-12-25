@@ -77,7 +77,11 @@ class App extends Component {
   
     render() {
         return (
-            <Container>
+            <Container className="mt-5 p-4" style={{ 
+                background: "rgba(255, 255, 255, 0.95)", 
+                borderRadius: "20px",
+                boxShadow: "0 10px 40px rgba(0, 0, 0, 0.2)"
+            }}>
                 <Row
                     style={{
                         display: "flex",
@@ -85,12 +89,16 @@ class App extends Component {
                         alignItems: "center",
                         fontSize: "3rem",
                         fontWeight: "bolder",
+                        marginTop: "1rem",
+                        marginBottom: "1rem",
+                        color: "#667eea",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.1)"
                     }}
                 >
-                    10WeeksofCloudOps - TODO LIST
+                    📝 TODO LIST
                 </Row>
-  
-                <hr />
+
+                <hr style={{ borderTop: "2px solid #667eea", opacity: "0.3" }} />
                 <Row>
                     <Col md={{ span: 5, offset: 4 }}>
                         <InputGroup className="mb-3">
@@ -101,18 +109,22 @@ class App extends Component {
                                 onChange={(item) =>
                                     this.updateInput(item.target.value)
                                 }
+                                onKeyPress={(e) => {
+                                    if (e.key === "Enter") {
+                                        this.addItem();
+                                    }
+                                }}
                                 aria-label="add something"
                                 aria-describedby="basic-addon2"
                             />
-                            <InputGroup>
-                                <Button
-                                    variant="dark"
-                                    className="mt-2"
-                                    onClick={() => this.addItem()}
-                                >
-                                    ADD
-                                </Button>
-                            </InputGroup>
+                            <Button
+                                variant="dark"
+                                size="lg"
+                                onClick={() => this.addItem()}
+                                style={{ marginLeft: "10px" }}
+                            >
+                                ADD
+                            </Button>
                         </InputGroup>
                     </Col>
                 </Row>
@@ -147,6 +159,17 @@ class App extends Component {
                                 );
                             })}
                         </ListGroup>
+                    </Col>
+                </Row>
+                <Row className="mt-5">
+                    <Col className="text-center">
+                        <p style={{ 
+                            color: "#666", 
+                            fontSize: "0.9rem",
+                            marginTop: "30px"
+                        }}>
+                            Powered by EKS GitOps Automation 🚀
+                        </p>
                     </Col>
                 </Row>
             </Container>
