@@ -1,3 +1,4 @@
+# First stage
 FROM node:18-alpine AS installer
 
 WORKDIR /app
@@ -7,6 +8,8 @@ COPY package*.json ./
 RUN npm install 
 
 COPY . .
+
+# Second stage
 
 RUN npm run build
 
